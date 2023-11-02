@@ -18,16 +18,6 @@ const SignUpPage = () => {
     const [loading, setLoading] = React.useState(false);
     const onSignUp = async () => {
         try {
-            
-            // const response = await fetch('/api/users/signup', {
-            //     method: 'POST',
-            //     headers: {
-            //       'Content-Type': 'application/json',
-            //     },
-            //     body: JSON.stringify(user),
-            //   });
-            //   router.push('/login')
-            
             setLoading(true);
             const response = await axios.post("/api/users/signup",user)
             console.log('resultt',response.data);
@@ -46,7 +36,7 @@ const SignUpPage = () => {
         } else {
             setButtonDisabled(true);
         }
-    })
+    },[user])
     return (
         <div className="flex">
             <div className="UX-center-container">
