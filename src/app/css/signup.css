@@ -1,0 +1,96 @@
+/* signup.css */
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+  }
+  
+  .UX-center-container {
+    background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .ux-components {
+    margin: 20px 0;
+  }
+  
+  .signup-heading {
+    font-size: 24px;
+    margin: 0 0 20px;
+    font-family:Arial, Helvetica, sans-serif;
+  }
+  
+  .email-component,
+  .name-component,
+  .password-component {
+    margin-bottom: 20px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .submit-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  .submit-button:hover {
+    background: #0056b3;
+  }
+
+  .UX-button-container {
+    padding: 10px 10px;
+    border-radius: 2px;
+  }
+  
+  .param-id {
+    padding: 20px;
+    background-color: orange;
+    color:black;
+  }
+
+ /* userprofile.css */
+
+.UI-profile-container {
+  text-align: center;
+  background: #bd0808;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 0 auto;
+}
+
+hr {
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+p {
+  font-size: 18px;
+}
+
+.param-id {
+  font-weight: bold;
+  color: #007bff;
+}
