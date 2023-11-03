@@ -31,8 +31,9 @@ const LoginPage = () => {
             setLoading(true);
             const response = await axios.post("/api/users/login",user);
             const name = response.data.name;
+            localStorage.setItem('userName',name);
             console.log(response.data);
-            router.push("/home",name);
+            router.push("/home");
         } catch (err: any) {
             console.log("error in logging in ", err)
             // toast.error(error.message);
