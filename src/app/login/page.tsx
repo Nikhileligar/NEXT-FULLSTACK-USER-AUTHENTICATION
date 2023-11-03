@@ -5,10 +5,7 @@ import axios from "axios";
 import Link from "next/link";
 import React from "react";
 import "../css/signup.css"
-import router from "next/router";
-import toast from "react-hot-toast";
 import {useEffect, useState} from "react"
-import { NextResponse } from "next/server";
 
 const LoginPage = () => {
     const router = useRouter();
