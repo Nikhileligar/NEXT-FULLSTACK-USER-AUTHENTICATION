@@ -2,6 +2,8 @@
 import Link from 'next/link';
 import '../css/signup.css'
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 const HomePage = () => {
   const [name, setName] = useState<string | null>(null);
   useEffect(() => {
@@ -11,17 +13,28 @@ const HomePage = () => {
      setName(username)
     }
   },[])
+
+  const onProfile = async () => {
+      try {
+          const response = await axios.get("/api/users/getUsers");
+          console.log(response);
+          
+      } catch (err) {
+          console.log(err);
+          // toast.error(err.message);
+      }
+  }
   return (
     <div className="flex">
       <div className="ux-home-container">
-        <h1>welcome</h1>
-        <h1>{name}</h1>
+        <h1 className = 'signup-heading' >welcome</h1>
+        <h1 className='signup-heading'>{name}</h1>
       <div className="left-sidebar">
-            <Link href="/profile">
-                    <i className="fas fa-user-circle"></i> Profile
+            <Link href="/profile" onClick={onProfile}>
+                    <i className="user-circle"></i> Profile
             </Link>
             <Link href="/compose-email">
-                    <i className="fas fa-envelope"></i> Send Email
+                    <i className="user-circle"></i> Send Email
             </Link>
         </div>
         <div className="center-container">
