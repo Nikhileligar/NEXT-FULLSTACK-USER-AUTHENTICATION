@@ -4,9 +4,10 @@ import bcryptjs from "bcryptjs"
 import { NextRequest, NextResponse } from "next/server";
 import jwt from "jsonwebtoken";
 
+
 DbConfig()
 
-export default async function POST (request: NextRequest)  {
+export async function POST (request: NextRequest)  {
     try {
         const reqBody = await request.json()
         const {email, password} = reqBody;
@@ -36,6 +37,7 @@ export default async function POST (request: NextRequest)  {
         const validateToken = jwt.sign(tokenData, process.env.TOKEN_SECRET!,{expiresIn: "1d"})
         const response = NextResponse.json({
             message: "loggedIn successfully",
+            name: user.name,
             success: true
         });
         response.cookies.set("token",validateToken,{

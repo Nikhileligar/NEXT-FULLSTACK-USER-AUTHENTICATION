@@ -1,31 +1,41 @@
 /* signup.css */
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('../../../user-image.jpg'); /* Replace with your image file path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 
 .flex {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-  }
-  
-  .UX-center-container {
-    background: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    padding: 20px;
-    text-align: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Change height to min-height */
+  background-color: rgba(255, 255, 255, 0.186); /* Add background overlay with transparency */
+  backdrop-filter: blur(10px); /* Optional: Apply a blur effect to the background */
+}
+
+.UX-center-container {
+  background: #ffffff09;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
   
   .ux-components {
     margin: 20px 0;
   }
   
   .signup-heading {
-    font-size: 24px;
+    font-size: 39px;
     margin: 0 0 20px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    color:#ffff;
   }
   
   .email-component,

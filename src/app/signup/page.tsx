@@ -41,7 +41,7 @@ const SignUpPage = () => {
         <div className="flex">
             <div className="UX-center-container">
                 <div className="ux-components">
-                    <h1 className="signup-heading">{loading ? "processing" : "signup"}</h1>
+                    <h1 className="signup-heading">{loading ? "processing" : "sign up"}</h1>
                         <div className="email-component">
                             <input type="text" id="email" placeholder="email" value={user.email} onChange={(e) => setUser({...user, email: e.target.value})}/>
                         </div>
@@ -53,7 +53,7 @@ const SignUpPage = () => {
                         </div>
                         <div className="UX-button-container">
                             <button className="submit-button" onClick={onSignUp}>
-                                {buttonDisabled ? "no signup" : "Signup"}
+                                {buttonDisabled ? "No empty fields" : "Signup"}
                             </button>
                             <Link href="/login"> visit login page </Link>
                         </div>

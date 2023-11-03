@@ -30,13 +30,16 @@ const LoginPage = () => {
         try {
             setLoading(true);
             const response = await axios.post("/api/users/login",user);
-            router.push("/profile");
-
-        } catch (err) {
+            const name = response.data.name;
+            console.log(response.data);
+            router.push("/home",name);
+        } catch (err: any) {
             console.log("error in logging in ", err)
             // toast.error(error.message);
-        }
+        } finally {
+            setLoading(false);
     }
+}
     return (
         <div className="flex">
             <div className="UX-center-container">
@@ -52,6 +55,7 @@ const LoginPage = () => {
                             <button className="submit-button" onClick={onSignIn}>
                                 {buttonDisabled ? 'cant signIn' : 'signIn'}
                             </button>
+
                             <Link href="/signup"> new user? click here </Link>
                         </div>
                 </div>
