@@ -104,3 +104,30 @@ p {
   font-weight: bold;
   color: #007bff;
 }
+
+.left-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 200px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.186);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.left-sidebar a {
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  padding-top:20px;
+}
+
+.left-sidebar i {
+  margin-right: 10px;
+}
