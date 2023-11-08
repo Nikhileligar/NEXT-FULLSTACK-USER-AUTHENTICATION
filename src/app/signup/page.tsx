@@ -31,7 +31,7 @@ const SignUpPage = () => {
     }
 
     useEffect(() => {
-        if (user?.email?.length > 0 && user?.password?.length > 0 && user?.name?.length > 0) {
+        if (user?.email?.length > 0 && user?.password?.length > 0 && user?.name?.length > 0 && user?.password?.length > 8) {
             setButtonDisabled(false);
         } else {
             setButtonDisabled(true);
@@ -50,6 +50,8 @@ const SignUpPage = () => {
                         </div>
                         <div className="password-component">
                             <input type="password" id="password" placeholder="password" value={user.password} onChange={(e) => setUser({...user,password: e.target.value})} />
+                        </div>
+                        <div>
                         </div>
                         <div className="UX-button-container">
                             <button className="submit-button" onClick={onSignUp}>

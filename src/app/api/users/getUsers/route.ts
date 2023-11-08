@@ -1,14 +1,15 @@
 import { DbConfig } from "@/dbConfig/dbConfig";
+import { getDataFromToken } from "@/helpers/getDataFromToken";
 import User from "@/model/userModel";
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 
 DbConfig()
 
-export async function GET (request: NextRequest) {
+export async function GET () {
     try {
-        const users = User.find();
-        console.log(users);
+        const users = await User.find();
+        console.log(users,'USERS USERS USERS USERS');
         return NextResponse.json({
             message: "users fetched successfully",
             status: 200,
