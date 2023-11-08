@@ -17,7 +17,7 @@ const LoginPage = () => {
     const [loading, setLoading] = React.useState(false);
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
     useEffect(() => {
-        if (user.email.length > 0 && user.password.length > 0) {
+        if (user.email.length > 0 && user.password.length > 8) {
             setButtonDisabled(false);
         } else {
             setButtonDisabled(true);
@@ -51,7 +51,7 @@ const LoginPage = () => {
                         </div>
                         <div className="UX-button-container">
                             <button className="submit-button" onClick={onSignIn}>
-                                {buttonDisabled ? 'cant signIn' : 'signIn'}
+                                {buttonDisabled ? 'cant signIn' : 'sign in'}
                             </button>
 
                             <Link href="/signup"> new user? click here </Link>

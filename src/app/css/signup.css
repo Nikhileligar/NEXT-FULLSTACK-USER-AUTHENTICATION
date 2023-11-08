@@ -147,3 +147,20 @@ p {
   font-size: 50px;
   background-color: #033396
 }
+
+.submit-button-right-navbar {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      top: 0px;
+      right: 0px;
+      position: fixed;
+      cursor: pointer;
+}
+
+.label {
+        font-weight: bold;
+        color: #333
+}
