@@ -164,3 +164,8 @@ p {
         font-weight: bold;
         color: #333
 }
+
+.radio-flex { 
+    display: flex;
+    justify-content: center;
+}

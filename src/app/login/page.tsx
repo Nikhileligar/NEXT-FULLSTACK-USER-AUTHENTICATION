@@ -13,6 +13,9 @@ const LoginPage = () => {
         email:"",
         password:""
     });
+    // admin user 
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [isUser, setIsUser] = useState(false);
     
     const [loading, setLoading] = React.useState(false);
     const [buttonDisabled, setButtonDisabled] = React.useState(false);
@@ -38,6 +41,10 @@ const LoginPage = () => {
             setLoading(false);
     }
 }
+
+    const adminUser = () => {
+
+    }
     return (
         <div className="flex">
             <div className="UX-center-container">
@@ -49,6 +56,18 @@ const LoginPage = () => {
                         <div className="password-component">
                             <input type="password" id="password" placeholder="password" value={user.password} onChange={(e) => setUser({...user, password: e.target.value})} />
                         </div>
+                        <label>
+                            <div className="radio-flex">
+                                <div>
+                                <input type="radio" name="adminOption" value="admin" checked={isAdmin} onChange={() => setIsAdmin(true)} />
+                                Admin
+                                </div>
+                                <div>
+                                <input type="radio" name="adminOption" value="user" checked={isAdmin} onChange={() => setIsUser(false)} />
+                                User
+                            </div>
+                        </div>
+                        </label>
                         <div className="UX-button-container">
                             <button className="submit-button" onClick={onSignIn}>
                                 {buttonDisabled ? 'cant signIn' : 'sign in'}

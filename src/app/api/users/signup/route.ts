@@ -1,4 +1,5 @@
 import { DbConfig } from "@/dbConfig/dbConfig";
+import { sendEmail } from "@/helpers/mailer";
 import User from "@/model/userModel";
 import bcrypt from "bcryptjs"
 import { error } from "console";
@@ -13,7 +14,7 @@ export async function POST (request: NextRequest) {
         const userExists = await User.findOne({email});
         if (userExists) {
             console.log("user is already Exists");
-            return NextResponse.json({error: "user Already Exists", status: 400})
+            return NextResponse.json({error: "user Already Exists", status: 400, success: false})
         }
         // hash password
         const salt = await bcrypt.genSalt(10)
@@ -26,6 +27,9 @@ export async function POST (request: NextRequest) {
         })
         const savedUser = await newUser.save();
         console.log(savedUser);
+
+        // send verification email
+        await sendEmail({email, emailType: "VERIFY", userId: savedUser._id})
 
         return NextResponse.json({
             message:"signed up successfully",
